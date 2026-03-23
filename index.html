@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Checklist de Filmes</title>
+<title>ilovu</title>
 
 <style>
 /* Fundo responsivo da página */
@@ -51,7 +51,13 @@ input[type="checkbox"]:checked {
 }
 </style>
 </head>
+<script>
+var senha = prompt("Digite a senha:");
 
+if (senha !== "ilovu") {
+  document.body.innerHTML = "Acesso negado";
+}
+</script>
 <body>
 <div class="container">
 
