@@ -2,20 +2,47 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Checklist de Filmes</title>
+
 <style>
-/* Estilo dos checkboxes para usar coração */
+/* Fundo responsivo da página */
+body {
+  margin: 0;
+  min-height: 100vh; /* ocupa toda a altura da tela */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #ffe7c2; /* coloque a cor do fundo da sua imagem */
+}
+
+/* Container centralizado */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 400px; /* largura máxima no PC */
+}
+
+/* Imagem responsiva */
+.container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Checkboxes com corações */
 input[type="checkbox"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  width: 40px;             /* tamanho do coração */
+  width: 40px;             /* tamanho clicável */
   height: 40px;
-  background-color: transparent; /* fundo transparente */
+  background-color: transparent;
   cursor: pointer;
   background-image: url('coracao-vazio.png'); /* coração vazio */
   background-size: cover;
   border: none;
+  position: absolute;
 }
 
 /* Quando marcado, mostra o coração cheio */
@@ -25,27 +52,25 @@ input[type="checkbox"]:checked {
 </style>
 </head>
 
-<body style="margin:0; display:flex; justify-content:center;">
-
-<div style="position: relative; width: 400px;">
+<body>
+<div class="container">
 
   <!-- SUA IMAGEM -->
-  <img src="imagem.png" width="100%">
+  <img src="imagem.png" alt="Checklist de Filmes">
 
   <!-- CHECKBOXES -->
-  <input type="checkbox" style="position:absolute; top:250px; left:60px;">
-  <input type="checkbox" style="position:absolute; top:300px; left:60px;">
-  <input type="checkbox" style="position:absolute; top:350px; left:60px;">
-  <input type="checkbox" style="position:absolute; top:400px; left:60px;">
-  <input type="checkbox" style="position:absolute; top:450px; left:60px;">
-  <input type="checkbox" style="position:absolute; top:500px; left:60px;">
-  <input type="checkbox" style="position:absolute; top:550px; left:60px;">
-  <input type="checkbox" style="position:absolute; top:600px; left:60px;">
-  <input type="checkbox" style="position:absolute; top:650px; left:60px;">
-  <input type="checkbox" style="position:absolute; top:700px; left:60px;">
-  <input type="checkbox" style="position:absolute; top:750px; left:60px;"> 
+  <input type="checkbox" style="top:250px; left:60px;">
+  <input type="checkbox" style="top:300px; left:60px;">
+  <input type="checkbox" style="top:350px; left:60px;">
+  <input type="checkbox" style="top:400px; left:60px;">
+  <input type="checkbox" style="top:450px; left:60px;">
+  <input type="checkbox" style="top:500px; left:60px;">
+  <input type="checkbox" style="top:550px; left:60px;">
+  <input type="checkbox" style="top:600px; left:60px;">
+  <input type="checkbox" style="top:650px; left:60px;">
+  <input type="checkbox" style="top:700px; left:60px;">
+  <input type="checkbox" style="top:750px; left:60px;">
 
 </div>
-
 </body>
 </html>
