@@ -6,77 +6,109 @@
 <title>i lov u ♡ </title>
 
 <style>
-/* Fundo responsivo da página */
+
 body {
   margin: 0;
-  min-height: 100vh; /* ocupa toda a altura da tela */
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  background-color: #ffe7c2; /* coloque a cor do fundo da sua imagem */
+  background-color: #ffe7c2;
 }
 
-/* Container centralizado */
 .container {
   position: relative;
   width: 100%;
-  max-width: 400px; /* largura máxima no PC */
+  max-width: 400px;
 }
 
-/* Imagem responsiva */
 .container img {
   width: 125%;
   height: auto;
   display: block;
 }
 
-/* Checkboxes com corações */
 input[type="checkbox"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
-  width: 35px;             /* tamanho clicável */
+  width: 35px;
   height: 35px;
   background-color: transparent;
   cursor: pointer;
-  background-image: url('coracao-vazio.png'); /* coração vazio */
+  background-image: url('coracao-vazio.png');
   background-size: cover;
   border: none;
   position: absolute;
 }
 
-/* Quando marcado, mostra o coração cheio */
 input[type="checkbox"]:checked {
   background-image: url('coracao-cheio.png');
 }
 </style>
-</head>
-<script>
-var senha = prompt("Digite a senha para acessar o checklist:");
 
-if (senha !== "ilovu") {   // Troque "1234" pela senha que você quiser
-  document.body.innerHTML = "<h1>Acesso negado</h1>";
+
+</head>
+
+<body>
+
+<audio id="musica" autoplay loop muted hidden>
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+window.addEventListener("click", function() {
+  const audio = document.getElementById("musica");
+  audio.muted = false;
+  audio.volume = 0.5;
+  audio.play();
+});
+</script>
+
+<div class="container">
+<script>
+var senha = prompt("filminhos <3 :");
+
+if (senha !== "ilovu") {
+  document.body.innerHTML = "<h1>＞︿＜</h1>";
 }
 </script>
-<body>
-<div class="container">
 
-  <!-- SUA IMAGEM -->
-  <img src="imagem.png" alt="Checklist de Filmes">
+<img src="imagem.png" alt="Filminhos">
 
-  <!-- CHECKBOXES -->
-  <input type="checkbox" style="top:175px; left:60px;">
-  <input type="checkbox" style="top:240px; left:60px;">
-  <input type="checkbox" style="top:310px; left:60px;">
-  <input type="checkbox" style="top:375px; left:60px;">
-<input type="checkbox" style="top:448px; left:60px;">
-<input type="checkbox" style="top:514px; left:60px;">
-<input type="checkbox" style="top:579px; left:60px;">
-<input type="checkbox" style="top:645px; left:60px;">
-<input type="checkbox" style="top:713px; left:60px;">
-<input type="checkbox" style="top:784px; left:60px;">
-  
+<!-- CHECKBOXES COM ID -->
+<input type="checkbox" id="item1" style="top:175px; left:60px;">
+<input type="checkbox" id="item2" style="top:240px; left:60px;">
+<input type="checkbox" id="item3" style="top:310px; left:60px;">
+<input type="checkbox" id="item4" style="top:375px; left:60px;">
+<input type="checkbox" id="item5" style="top:448px; left:60px;">
+<input type="checkbox" id="item6" style="top:514px; left:60px;">
+<input type="checkbox" id="item7" style="top:579px; left:60px;">
+<input type="checkbox" id="item8" style="top:645px; left:60px;">
+<input type="checkbox" id="item9" style="top:713px; left:60px;">
+<input type="checkbox" id="item10" style="top:784px; left:60px;">
 
 </div>
+
+<script>
+// Seleciona todos os checkboxes
+const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+// CARREGAR estado salvo
+window.onload = () => {
+  checkboxes.forEach((checkbox) => {
+    const saved = localStorage.getItem(checkbox.id);
+    if (saved === "true") {
+      checkbox.checked = true;
+    }
+  });
+};
+
+// SALVAR ao clicar
+checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener("change", () => {
+    localStorage.setItem(checkbox.id, checkbox.checked);
+  });
+});
+</script>
+
 </body>
 </html>
